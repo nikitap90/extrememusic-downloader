@@ -92,6 +92,9 @@ def download_album(album_id, extreme_env):
 					if version != "Full Version" else ""
 			filename = "%s %s%s" % (number, title, suffix)
 			filename = filename.replace("/", "-")
+			if os.path.isfile(output_directory+"/"+filename+".mp3"):
+				print("Skipping...")
+				continue
 			print(filename)
 			try:
 				retrieve(preview, "%s/%s.mp3" % \
@@ -125,6 +128,9 @@ def download_playlist(playlist_id, extreme_env):
 					if version != "Full Version" else ""
 			filename = "%s %s%s" % (number, title, suffix)
 			filename = filename.replace("/", "-")
+			if os.path.isfile(output_directory+"/"+filename+".mp3"):
+				print("Skipping...")
+				continue
 			print(filename)
 			try:
 				retrieve(preview, "%s/%s.mp3" % \
