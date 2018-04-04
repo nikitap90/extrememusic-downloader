@@ -10,6 +10,7 @@ import sys
 import re
 import json
 import urllib.request
+import os.path
 
 def parse_arguments():
 	"""Parse command line arguments and return the list"""
